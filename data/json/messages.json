@@ -84,7 +84,7 @@
           "profileImage": "data/images/profil.jpg"
         },
         {
-          "userId": 4,
+          "userId": 1,
           "firstname": "Alice",
           "lastname": "Dupont",
           "profileImage": "data/images/profiles/emma.jpg"

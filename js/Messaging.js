@@ -11,9 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(messagesData => {
             displayConversations(messagesData); // Passer les données de messages chargées à la fonction d'affichage
-            // Ouvrir la première conversation par défaut
-            if (messagesData.conversations.length > 0) {
-                openConversation(messagesData.conversations[0]); // Ouvrir la première conversation
+            
+            // Ouvrir la conversation depuis l'argument URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('userId'); // Récupérer l'ID de l'utilisateur depuis l'URL
+            
+            if (userId) {
+                const conversationToOpen = messagesData.conversations.find(conv => 
+                    conv.participants.some(p => p.userId == userId) // Vérifier si l'utilisateur est dans la conversation
+                );
+                if (conversationToOpen) {
+                    openConversation(conversationToOpen); // Ouvrir la conversation spécifique si elle existe
+                } else {
+                    console.error('Aucune conversation trouvée pour l\'ID utilisateur:', userId);
+                }
+            } else if (messagesData.conversations.length > 0) {
+                openConversation(messagesData.conversations[0]); // Ouvrir la première conversation par défaut
             }
         })
         .catch(error => console.error('Erreur lors du chargement des données des messages :', error));
