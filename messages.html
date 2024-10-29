@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<div id="header"></div>
+
+<script>
+    // Charger le fichier de modèle pour le header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+</script>
+
+<main id="messaging-section">
+    <div id="conversations-list"></div>
+    <div id="chat-window" style="display: none;">
+        <div id="messages"></div>
+        <input type="text" id="new-message" placeholder="Écrire un message...">
+        <button id="send-message">Envoyer</button>
+    </div>
+</main>
+
+<script type="module" src="js/Messaging.js"></script>
+
+</body>
+</html>

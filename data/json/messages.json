@@ -1,0 +1,109 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "participants": [
+        {
+          "userId": 0,
+          "firstname": "Jordan",
+          "lastname": "Legros",
+          "profileImage": "data/images/profil.jpg"
+        },
+        {
+          "userId": 2,
+          "firstname": "Paul",
+          "lastname": "Martin",
+          "profileImage": "data/images/profiles/paul.jpg"
+        }
+      ],
+      "messages": [
+        {
+          "id": 101,
+          "senderId": 0,
+          "content": "Salut Paul, tu es libre ce week-end ?",
+          "timestamp": "2024-10-29T10:15:00Z"
+        },
+        {
+          "id": 102,
+          "senderId": 2,
+          "content": "Salut Jordan ! Oui, pourquoi pas ?",
+          "timestamp": "2024-10-29T10:16:00Z"
+        },
+        {
+          "id": 103,
+          "senderId": 0,
+          "content": "Je pensais aller au café. Tu viens ?",
+          "timestamp": "2024-10-29T10:17:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "participants": [
+        {
+          "userId": 0,
+          "firstname": "Jordan",
+          "lastname": "Legros",
+          "profileImage": "data/images/profil.jpg"
+        },
+        {
+          "userId": 3,
+          "firstname": "Clara",
+          "lastname": "Lemoine",
+          "profileImage": "data/images/profiles/clara.jpg"
+        }
+      ],
+      "messages": [
+        {
+          "id": 201,
+          "senderId": 0,
+          "content": "Clara, as-tu vu le dernier film ?",
+          "timestamp": "2024-10-29T11:00:00Z"
+        },
+        {
+          "id": 202,
+          "senderId": 3,
+          "content": "Oui, c'était incroyable !",
+          "timestamp": "2024-10-29T11:01:00Z"
+        },
+        {
+          "id": 203,
+          "senderId": 0,
+          "content": "J'ai adoré la scène finale !",
+          "timestamp": "2024-10-29T11:02:00Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "participants": [
+        {
+          "userId": 0,
+          "firstname": "Jordan",
+          "lastname": "Legros",
+          "profileImage": "data/images/profil.jpg"
+        },
+        {
+          "userId": 4,
+          "firstname": "Alice",
+          "lastname": "Dupont",
+          "profileImage": "data/images/profiles/emma.jpg"
+        }
+      ],
+      "messages": [
+        {
+          "id": 301,
+          "senderId": 0,
+          "content": "Emma, tu veux aller à la randonnée ce week-end ?",
+          "timestamp": "2024-10-29T12:00:00Z"
+        },
+        {
+          "id": 302,
+          "senderId": 4,
+          "content": "Bien sûr, ça me tente beaucoup !",
+          "timestamp": "2024-10-29T12:01:00Z"
+        }
+      ]
+    }
+  ]
+}
