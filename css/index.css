@@ -1,0 +1,103 @@
+.feed{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.post{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.post__userinfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap : 20px
+}
+
+.post__content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    gap: 30px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.post__imagecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.post__image{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.post__comments{
+    padding: 20px 50px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.post__interactions{
+    display: flex;
+    gap:15px
+}
+.post__comments-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.post__comment-item{
+    padding: 20px 30px;
+    gap: 10px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.post__reply-object{
+    width: 100%;
+    display: flex;
+    flex-direction: row ;
+    gap: 20px;
+}
+
+.post__comment-object{
+    margin-top: 30px;
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row ;
+    gap: 20px;
+}

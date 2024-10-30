@@ -1,23 +1,17 @@
-<!-- header.html -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Réseau Social</title>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <h1 class="header__title">Bienvenue sur le Mini Réseau Social</h1>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <ul class="navbar__list">
-                <li class="navbar__item"><a href="./index.html">Mon Feed</a></li>
-                <li class="navbar__item"><a href="./messages.html">Messagerie</a></li>
-                <li class="navbar__item"><a href="./friends-list.html">Mes Amis</a></li>
-            </ul>
-        </nav>
-        <div class="user-info">
-            <img src="" alt="Photo de profil" class="user-info__profile-image" id="profileImage">
-            <h2 class="user-info__name" id="userName"></h2>
-        </div>
-    </header>
+<a href ="./index.html" class="header__logo-and-title">
+    <img src="/assets/logo.png" alt="logo" class="header__logo">
+    <h1 class="header__title">Mini Réseau Social</h1>
+</a>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <ul class="navbar__list">
+        <li class="navbar__item"><a href="./index.html">Mon Feed</a></li>
+        <li class="navbar__item"><a href="./messages.html">Messagerie</a></li>
+        <li class="navbar__item"><a href="./friends-list.html">Mes Amis</a></li>
+    </ul>
+</nav>
+<div class="header__user-info">
+    <img src="" alt="Photo de profil" class="user-image" id="profileImage">
+    <p class="header__name" id="userName"></p>
+</div>

@@ -6,18 +6,21 @@ const friendsData = [
 ];
 
 // Références aux éléments du DOM
+const searchInput = document.getElementById('search');
 const friendsList = document.getElementById('friends-list');
 
 // Fonction pour générer la liste d'amis dans le DOM
 function generateFriendsList() {
+    friendsList.innerHTML = ''; // Réinitialiser la liste
     friendsData.forEach(friend => {
+        
         const friendDiv = document.createElement('div');
         friendDiv.classList.add('friend');
         friendDiv.setAttribute('draggable', 'true');
         friendDiv.setAttribute('data-userid', friend.id);
 
         friendDiv.innerHTML = `
-            <img src="${friend.image}" alt="${friend.name}" />
+            <img src="${friend.image}" alt="${friend.name}" class="user-image" />
             <span>${friend.name}</span>
         `;
 
@@ -48,10 +51,33 @@ function dragOver(e) {
 function drop(e) {
     e.preventDefault();
     if (draggedElement !== e.currentTarget) {
-        // Insérer l'élément déplacé avant l'élément ciblé
-        friendsList.insertBefore(draggedElement, e.currentTarget);
+        // Récupérer l'index des éléments dans la liste
+        const draggedIndex = Array.from(friendsList.children).indexOf(draggedElement);
+        const targetIndex = Array.from(friendsList.children).indexOf(e.currentTarget);
+
+        // Si l'élément déplacé vient avant l'élément ciblé, insérez-le après
+        if (draggedIndex < targetIndex) {
+            e.currentTarget.insertAdjacentElement('afterend', draggedElement);
+        } else {
+            // Sinon, insérez-le avant
+            friendsList.insertBefore(draggedElement, e.currentTarget);
+        }
     }
 }
+
+// Fonction pour filtrer les amis par nom ou prénom
+function filterFriends() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const friends = Array.from(friendsList.children);
+
+    friends.forEach(friend => {
+        const name = friend.querySelector('span').textContent.toLowerCase();
+        friend.style.display = name.includes(searchTerm) ? '' : 'none'; // Afficher ou masquer
+    });
+}
+
+// Événement de recherche
+searchInput.addEventListener('input', filterFriends);
 
 // Générer la liste d'amis au chargement de la page
 document.addEventListener("DOMContentLoaded", generateFriendsList);

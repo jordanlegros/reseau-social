@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
-<div id="header"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+         <!-- Fichier CSS global -->
+         <link rel="stylesheet" href="./css/global.css">
+        
+         <!-- Fichier CSS spécifique à la page -->
+         <link rel="stylesheet" href="./css/index.css">
+        <title>Mini Réseau Social - Accueil</title>
+        
+    </head>
+    <body>
+        <header></header>
 
-<script>
-    // Charger le fichier de modèle pour le header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-</script>
+        <script type="module">
+            import { displayUserInfo } from './js/User.js';
 
-<main class="feed" id="feed">
-    <!-- Les posts seront affichés ici -->
-</main>
+            // Charger le fichier header.html
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('header').innerHTML = data;
+                    displayUserInfo(); // Appeler la fonction pour mettre à jour les infos de l'utilisateur
+                });
+        </script>
 
-<script type="module" src="js/DisplayFeed.js"></script>
-<script type="module" src="js/User.js"></script>
-</body>
+        <main class="feed" id="feed">
+            <!-- Les posts seront affichés ici -->
+        </main>
+
+        <script type="module" src="js/DisplayFeed.js"></script>
+        <script type="module" src="js/User.js"></script>
+    </body>
 </html>

@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+  }
+  
+img{
+    width: 300px;
+    height: 300px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    padding: 50px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+header {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+main{
+    max-width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Neumorphisme */
+    border-radius: 20px; 
+    box-shadow: 8px 8px 15px rgba(15, 0, 100, 0.05), 
+                -8px -8px 15px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+button{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    /* Neumorphisme */
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(15, 0, 100, 0.05), 
+                -2px -2px 5px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+button:hover{
+    background-color: #c7dcff;
+    
+}
+
+ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Enlève le retrait par défaut */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+input{
+    width: 100%;
+    padding: 20px;
+    /* Neumorphisme */
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(15, 0, 100, 0.05), 
+                -2px -2px 5px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+.user-image{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    
+}
+
+.header__logo-and-title{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.header__logo{
+    width: 64px;
+    height: 64px;
+}
+
+.navbar__list{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.navbar__item a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar__item a:hover{
+    text-decoration: underline;
+}
+
+.header__user-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    /* Neumorphisme */
+    border-radius: 10px; 
+    box-shadow: 4px 4px 7px rgba(15, 0, 100, 0.05), 
+                -4px -4px 7px rgba(69, 81, 255, 0.048);
+    border: none;
+}
+
+
+
+.header__name{
+    font-size: 18px;
+    font-weight: 500;
+}

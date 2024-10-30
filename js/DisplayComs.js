@@ -6,6 +6,18 @@ export function createCommentSection(post) {
     const postComments = document.createElement('div');
     postComments.classList.add('post__comments');
 
+    const postInteractions = document.createElement('div');
+    postInteractions.classList.add('post__interactions');
+    ["like", "dislike", "love"].forEach(reaction => {
+        const button = document.createElement('button');
+        button.classList.add('post__reaction-btn', `post__reaction-btn--${reaction}`);
+        button.dataset.reaction = reaction;
+        button.textContent = reaction === "like" ? "👍 Like" : reaction === "dislike" ? "👎 Dislike" : "❤️ Love";
+        postInteractions.appendChild(button);
+    });
+
+    postComments.appendChild(postInteractions);
+
     const commentsTitle = document.createElement('h3');
     commentsTitle.classList.add('post__comments-title');
     commentsTitle.textContent = "Commentaires";
@@ -19,12 +31,15 @@ export function createCommentSection(post) {
     });
     postComments.appendChild(commentsList);
 
+    const commentObject = document.createElement('div');
+    commentObject.classList.add('post__comment-object');
+    postComments.appendChild(commentObject);
     // Champ de saisie pour le commentaire
     const commentInput = document.createElement('input');
     commentInput.type = 'text';
     commentInput.classList.add('post__comment-input');
     commentInput.placeholder = "Ajouter un commentaire...";
-    postComments.appendChild(commentInput);
+    commentObject.appendChild(commentInput);
 
     // Bouton pour ajouter le commentaire
     const commentBtn = document.createElement('button');
@@ -34,7 +49,7 @@ export function createCommentSection(post) {
     commentInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') addComment(post, commentInput.value);
     });
-    postComments.appendChild(commentBtn);
+    commentObject.appendChild(commentBtn);
 
     return postComments;
 }
@@ -46,7 +61,7 @@ function createCommentElement(comment, post) {
 
     const commentText = document.createElement('p');
     commentText.classList.add('post__comment-text');
-    commentText.textContent = `${comment.user.firstname} ${comment.user.lastname} : ${comment.content}`;
+    commentText.innerHTML = `<strong>${comment.user.firstname} ${comment.user.lastname}</strong>: ${comment.content}`;
     commentItem.appendChild(commentText);
 
     // Créer une liste pour les sous-commentaires
@@ -61,13 +76,15 @@ function createCommentElement(comment, post) {
         });
     }
 
+    const replyObject = document.createElement('div');
+    replyObject.classList.add('post__reply-object');
     // Ajoutez le champ de réponse uniquement pour les commentaires de niveau 1
     const replyInput = document.createElement('input');
     replyInput.type = 'text';
     replyInput.classList.add('post__reply-input');
     replyInput.placeholder = "Répondre au commentaire...";
-    commentItem.appendChild(replyInput);
-
+    replyObject.appendChild(replyInput);
+    commentItem.appendChild(replyObject);
     const replyBtn = document.createElement('button');
     replyBtn.classList.add('post__reply-btn');
     replyBtn.textContent = "Répondre";
@@ -75,7 +92,7 @@ function createCommentElement(comment, post) {
     replyInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') addReply(post, comment, replyInput.value, replyInput, commentItem); // Passer commentItem ici
     });
-    commentItem.appendChild(replyBtn);
+    replyObject.appendChild(replyBtn);
 
     return commentItem;
 }
@@ -87,7 +104,7 @@ function createSubCommentElement(subComment, post) {
 
     const subCommentText = document.createElement('p');
     subCommentText.classList.add('post__sub-comment-text');
-    subCommentText.textContent = `${subComment.user.firstname} ${subComment.user.lastname} : ${subComment.content}`;
+    subCommentText.innerHTML = `<strong>${subComment.user.firstname} ${subComment.user.lastname}</strong>: ${subComment.content}`;
     subCommentItem.appendChild(subCommentText);
 
     // Les sous-commentaires n'ont pas de champ de réponse

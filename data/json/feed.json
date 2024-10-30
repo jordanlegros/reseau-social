@@ -6,7 +6,7 @@
         "userId": 1,
         "firstname": "Alice",
         "lastname": "Dupont",
-        "profileImage": "data/images/profiles/alice.jpg"
+        "profileImage": "data/images/alice.jpg"
       },
       "content": "Aujourd'hui, j'ai découvert un super café en ville ☕️!",
       "image": "data/images/cafe.jpg",
@@ -17,7 +17,7 @@
             "userId": 2,
             "firstname": "Paul",
             "lastname": "Martin",
-            "profileImage": "data/images/profiles/paul.jpg"
+            "profileImage": "data/images/paul.jpg"
           },
           "content": "Il a l'air sympa, j'irai y faire un tour !",
           "comments": [
@@ -27,7 +27,7 @@
                 "userId": 1,
                 "firstname": "Alice",
                 "lastname": "Dupont",
-                "profileImage": "data/images/profiles/alice.jpg"
+                "profileImage": "data/images/alice.jpg"
               },
               "content": "Oui, tu ne seras pas déçu !",
               "comments": []
@@ -40,7 +40,7 @@
             "userId": 3,
             "firstname": "Clara",
             "lastname": "Lemoine",
-            "profileImage": "data/images/profiles/clara.jpg"
+            "profileImage": "data/images/clara.jpg"
           },
           "content": "Leur chocolat chaud est un délice 😍",
           "comments": []
@@ -53,7 +53,7 @@
         "userId": 2,
         "firstname": "Paul",
         "lastname": "Martin",
-        "profileImage": "data/images/profiles/paul.jpg"
+        "profileImage": "data/images/paul.jpg"
       },
       "content": "Week-end en randonnée ! Les montagnes étaient magnifiques.",
       "image": "data/images/montagne.jpg",
@@ -64,7 +64,7 @@
             "userId": 1,
             "firstname": "Alice",
             "lastname": "Dupont",
-            "profileImage": "data/images/profiles/alice.jpg"
+            "profileImage": "data/images/alice.jpg"
           },
           "content": "Les photos sont splendides !",
           "comments": [
@@ -74,7 +74,7 @@
                 "userId": 2,
                 "firstname": "Paul",
                 "lastname": "Martin",
-                "profileImage": "data/images/profiles/paul.jpg"
+                "profileImage": "data/images/paul.jpg"
               },
               "content": "Merci ! La vue en vrai était encore mieux !",
               "comments": []
@@ -89,7 +89,7 @@
         "userId": 3,
         "firstname": "Clara",
         "lastname": "Lemoine",
-        "profileImage": "data/images/profiles/clara.jpg"
+        "profileImage": "data/images/clara.jpg"
       },
       "content": "Un bon moment passé avec mes amis ce soir 🎉",
       "image": null,
@@ -100,7 +100,7 @@
             "userId": 1,
             "firstname": "Alice",
             "lastname": "Dupont",
-            "profileImage": "data/images/profiles/alice.jpg"
+            "profileImage": "data/images/alice.jpg"
           },
           "content": "On a bien rigolé !",
           "comments": []
@@ -113,7 +113,7 @@
         "userId": 1,
         "firstname": "Alice",
         "lastname": "Dupont",
-        "profileImage": "data/images/profiles/alice.jpg"
+        "profileImage": "data/images/alice.jpg"
       },
       "content": "Petite balade en forêt aujourd'hui 🌲",
       "image": "data/images/foret.jpg",
@@ -124,7 +124,7 @@
             "userId": 2,
             "firstname": "Paul",
             "lastname": "Martin",
-            "profileImage": "data/images/profiles/paul.jpg"
+            "profileImage": "data/images/paul.jpg"
           },
           "content": "C'est toujours si apaisant de se promener en nature.",
           "comments": []
@@ -135,7 +135,7 @@
             "userId": 3,
             "firstname": "Clara",
             "lastname": "Lemoine",
-            "profileImage": "data/images/profiles/clara.jpg"
+            "profileImage": "data/images/clara.jpg"
           },
           "content": "Les forêts ont un charme unique.",
           "comments": []
@@ -148,7 +148,7 @@
         "userId": 2,
         "firstname": "Paul",
         "lastname": "Martin",
-        "profileImage": "data/images/profiles/paul.jpg"
+        "profileImage": "data/images/paul.jpg"
       },
       "content": "Nouvelle recette de tarte aux pommes aujourd'hui 🍏. Verdict : un régal !",
       "image": "data/images/tarte.jpg",
@@ -159,7 +159,7 @@
             "userId": 1,
             "firstname": "Alice",
             "lastname": "Dupont",
-            "profileImage": "data/images/profiles/alice.jpg"
+            "profileImage": "data/images/alice.jpg"
           },
           "content": "J'en veux une part !",
           "comments": []
@@ -170,7 +170,7 @@
             "userId": 3,
             "firstname": "Clara",
             "lastname": "Lemoine",
-            "profileImage": "data/images/profiles/clara.jpg"
+            "profileImage": "data/images/clara.jpg"
           },
           "content": "Miam ! Tu m'invites la prochaine fois ? 😋",
           "comments": [
@@ -180,7 +180,7 @@
                 "userId": 2,
                 "firstname": "Paul",
                 "lastname": "Martin",
-                "profileImage": "data/images/profiles/paul.jpg"
+                "profileImage": "data/images/paul.jpg"
               },
               "content": "Bien sûr ! Ce sera avec plaisir.",
               "comments": []

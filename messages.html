@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
-<div id="header"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+         <!-- Fichier CSS global -->
+         <link rel="stylesheet" href="./css/global.css">
+        
+         <!-- Fichier CSS spécifique à la page -->
+         <link rel="stylesheet" href="./css/messages.css">
+        <title>Mini Réseau Social - Mes messages</title>
+        
+    </head>
+    <body>
+        <header></header>
 
-<script>
-    // Charger le fichier de modèle pour le header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        });
-</script>
+         <script type="module">
+            import { displayUserInfo } from './js/User.js';
 
-<main id="messaging-section">
-    <div id="conversations-list"></div>
-    <div id="chat-window" style="display: none;">
-        <div id="messages"></div>
-        <input type="text" id="new-message" placeholder="Écrire un message...">
-        <button id="send-message">Envoyer</button>
-    </div>
-</main>
+            // Charger le fichier header.html
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('header').innerHTML = data;
+                    displayUserInfo(); // Appeler la fonction pour mettre à jour les infos de l'utilisateur
+                });
+        </script>
 
-<script type="module" src="js/Messaging.js"></script>
+        <main class="messaging-section">
+            <div class="messaging-section__conversations-list"></div>
+            <div class="messaging-section__chat-window" style="display: none;">
+                <div class="messaging-section__messages"></div>
+                <div class="messaging-section__new-message-object">
+                    <input type="text" class="messaging-section__new-message" placeholder="Écrire un message...">
+                    <button class="messaging-section__send-message">Envoyer</button>
+                </div>
+                
+            </div>
+        </main>
 
-</body>
+        <script type="module" src="js/Messaging.js"></script>
+
+    </body>
 </html>

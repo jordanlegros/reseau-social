@@ -1,6 +1,5 @@
 // DisplayFeed.js
 import { createCommentSection } from './DisplayComs.js';
-import { sanitize } from './Sanitize.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     // Load the feed JSON
@@ -23,12 +22,12 @@ function createPostElement(post) {
 
     const postUserInfo = document.createElement('div');
     postUserInfo.classList.add('post__userinfo');
-    postElement.appendChild(postUserInfo);
+    
 
     const postUserImage = document.createElement('img');
-    postUserImage.classList.add('post__userimage');
+    postUserImage.classList.add('user-image');
     postUserInfo.appendChild(postUserImage);
-    postUserImage.src = post.user.image;
+    postUserImage.src = post.user.profileImage;
     postUserImage.alt = "Photo de profil";
 
     const postUserName = document.createElement('div');
@@ -39,15 +38,18 @@ function createPostElement(post) {
     const postContent = document.createElement('div');
     postContent.classList.add('post__content');
     postElement.appendChild(postContent);
-
+    postContent.appendChild(postUserInfo);
     
     
     if (post.image) {
+        const postImageContainer = document.createElement('div');
+        postImageContainer.classList.add('post__imagecontainer');
+        postContent.appendChild(postImageContainer);
         const postImage = document.createElement('img');
         postImage.src = post.image;
         postImage.alt = "Image du post";
         postImage.classList.add('post__image');
-        postContent.appendChild(postImage);
+        postImageContainer.appendChild(postImage);
     }
 
     const postText = document.createElement('p');
@@ -56,20 +58,13 @@ function createPostElement(post) {
     postContent.appendChild(postText);
     
 
-    const postInteractions = document.createElement('div');
-    postInteractions.classList.add('post__interactions');
-    ["like", "dislike", "love"].forEach(reaction => {
-        const button = document.createElement('button');
-        button.classList.add('post__reaction-btn', `post__reaction-btn--${reaction}`);
-        button.dataset.reaction = reaction;
-        button.textContent = reaction === "like" ? "👍 Like" : reaction === "dislike" ? "👎 Dislike" : "❤️ Love";
-        postInteractions.appendChild(button);
-    });
-    postElement.appendChild(postInteractions);
+    
+    
 
     // Add the comments section to the post
     const postComments = createCommentSection(post);
     postElement.appendChild(postComments);
+    
 
     return postElement;
 }

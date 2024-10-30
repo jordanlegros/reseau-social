@@ -13,7 +13,7 @@
           "userId": 2,
           "firstname": "Paul",
           "lastname": "Martin",
-          "profileImage": "data/images/profiles/paul.jpg"
+          "profileImage": "data/images/paul.jpg"
         }
       ],
       "messages": [
@@ -50,7 +50,7 @@
           "userId": 3,
           "firstname": "Clara",
           "lastname": "Lemoine",
-          "profileImage": "data/images/profiles/clara.jpg"
+          "profileImage": "data/images/clara.jpg"
         }
       ],
       "messages": [
@@ -87,19 +87,19 @@
           "userId": 1,
           "firstname": "Alice",
           "lastname": "Dupont",
-          "profileImage": "data/images/profiles/emma.jpg"
+          "profileImage": "data/images/alice.jpg"
         }
       ],
       "messages": [
         {
           "id": 301,
           "senderId": 0,
-          "content": "Emma, tu veux aller à la randonnée ce week-end ?",
+          "content": "Alice, tu veux aller à la randonnée ce week-end ?",
           "timestamp": "2024-10-29T12:00:00Z"
         },
         {
           "id": 302,
-          "senderId": 4,
+          "senderId": 1,
           "content": "Bien sûr, ça me tente beaucoup !",
           "timestamp": "2024-10-29T12:01:00Z"
         }
