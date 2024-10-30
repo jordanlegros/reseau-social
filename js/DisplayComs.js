@@ -38,6 +38,7 @@ export function createCommentSection(post) {
     const commentObject = document.createElement('div');
     commentObject.classList.add('post__comment-object');
     postComments.appendChild(commentObject);
+
     // Champ de saisie pour le commentaire
     const commentInput = document.createElement('input');
     commentInput.type = 'text';
@@ -71,7 +72,7 @@ function createCommentElement(comment, post) {
     // Créer une liste pour les sous-commentaires
     const subCommentsList = document.createElement('ul');
     subCommentsList.classList.add('post__sub-comments-list');
-    commentItem.appendChild(subCommentsList); // Placez la liste ici pour tous les commentaires
+    commentItem.appendChild(subCommentsList); 
 
     if (comment.comments && comment.comments.length > 0) {
         comment.comments.forEach(subComment => {
@@ -82,6 +83,7 @@ function createCommentElement(comment, post) {
 
     const replyObject = document.createElement('div');
     replyObject.classList.add('post__reply-object');
+
     // Ajoutez le champ de réponse uniquement pour les commentaires de niveau 1
     const replyInput = document.createElement('input');
     replyInput.type = 'text';
@@ -92,9 +94,9 @@ function createCommentElement(comment, post) {
     const replyBtn = document.createElement('button');
     replyBtn.classList.add('post__reply-btn');
     replyBtn.textContent = "Répondre";
-    replyBtn.addEventListener('click', () => addReply(post, comment, replyInput.value, replyInput, commentItem)); // Passer commentItem ici
+    replyBtn.addEventListener('click', () => addReply(post, comment, replyInput.value, replyInput, commentItem)); 
     replyInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') addReply(post, comment, replyInput.value, replyInput, commentItem); // Passer commentItem ici
+        if (event.key === 'Enter') addReply(post, comment, replyInput.value, replyInput, commentItem); 
     });
     replyObject.appendChild(replyBtn);
 
@@ -125,7 +127,7 @@ async function addComment(post, commentContent) {
             lastname: currentUser.lastName
         },
         content: sanitizedContent,
-        comments: [] // Pas de sous-commentaire pour un nouveau commentaire
+        comments: [] 
     };
 
     post.comments.push(newComment); // Ajoutez le nouveau commentaire à la liste des commentaires

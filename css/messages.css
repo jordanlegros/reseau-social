@@ -24,7 +24,6 @@
 }
 
 .messaging-section__conversation{
-    height: 150px;
     padding: 20px 30px;
     cursor: pointer;
     /* Neumorphisme */
@@ -34,9 +33,7 @@
     border: none;
 }
 
-.messaging-section__conversation{
-    overflow-y: auto;
-}
+
 
 .messaging-section__conversation:hover{
     background-color: #c7dcff;
@@ -86,3 +83,18 @@ flex-direction: row;
 align-items: center;
 gap: 10px;
 }
+
+@media (max-width: 1024px) {
+    
+    .messaging-section{
+        flex-direction: column;
+    }
+
+    .messaging-section__conversations-list{
+        width: 100%;
+    }
+
+    .messaging-section__new-message-object{
+        flex-direction: column;
+    }
+  }

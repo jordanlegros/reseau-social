@@ -140,3 +140,21 @@ input{
     font-size: 18px;
     font-weight: 500;
 }
+
+
+@media (max-width: 1024px) {
+    body{
+        padding: 0;
+    }
+    header{
+        flex-direction: column;
+        height: 100%;
+        gap: 50px;
+    }
+
+    main{
+        padding: 0;
+    }
+
+    
+  }

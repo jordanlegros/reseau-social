@@ -1,10 +1,10 @@
 import { sanitize } from './Sanitize.js';
 
-let currentConversation; // Déclaration globale
+let currentConversation; 
 
 document.addEventListener("DOMContentLoaded", () => {
     // Charger le JSON des messages
-    fetch('../data/json/messages.json') // Ajuster le chemin si nécessaire
+    fetch('../data/json/messages.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('La réponse du réseau n\'était pas correcte');
@@ -73,7 +73,7 @@ function displayConversations(messagesData) {
 function openConversation(conv) {
     const chatWindow = document.querySelector('.messaging-section__chat-window');
     const messagesDiv = document.querySelector('.messaging-section__messages');
-    currentConversation = conv; // Utilisation de la variable globale
+    currentConversation = conv; 
     chatWindow.style.display = 'flex'; // Afficher la fenêtre de chat
     messagesDiv.innerHTML = ''; // Réinitialiser le contenu des messages
     
@@ -152,7 +152,7 @@ sendMessageButton.onclick = sendNewMessage; // Appeler la fonction pour envoyer 
 
 // Ajouter un écouteur d'événement sur le champ de saisie pour détecter "Entrée"
 newMessageInput.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') { // Vérifie si la touche appuyée est "Entrée"
+    if (event.key === 'Enter') { 
         event.preventDefault(); // Empêche le saut de ligne dans le champ de texte
         sendNewMessage(); // Envoie le message
     }

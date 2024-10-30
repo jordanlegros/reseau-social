@@ -133,3 +133,48 @@
 .particle--love {
     color: pink;
 }
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal__content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.image-modal__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+    .post{
+        padding:0;
+    }
+
+    .post__reply-object{
+        flex-direction: column;
+    }
+
+    .post__comment-object{
+        flex-direction: column;
+    }
+    
+  }

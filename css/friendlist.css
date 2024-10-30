@@ -27,6 +27,10 @@
  border: none;
 }
 
-.friend span{
+@media (max-width: 1024px) {
+ .friendlist-container{
+    padding: 20px;
+ }
+
     
-}
+  }

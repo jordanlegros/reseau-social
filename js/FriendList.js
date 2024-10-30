@@ -11,7 +11,7 @@ const friendsList = document.getElementById('friends-list');
 
 // Fonction pour générer la liste d'amis dans le DOM
 function generateFriendsList() {
-    friendsList.innerHTML = ''; // Réinitialiser la liste
+    friendsList.innerHTML = '';
     friendsData.forEach(friend => {
         
         const friendDiv = document.createElement('div');
@@ -44,7 +44,7 @@ function dragStart(e) {
 
 // Fonction pour permettre le drop
 function dragOver(e) {
-    e.preventDefault(); // Nécessaire pour autoriser le drop
+    e.preventDefault(); 
 }
 
 // Fonction pour gérer le drop

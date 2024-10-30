@@ -12,7 +12,7 @@ export function displayUserInfo() {
     const userName = document.getElementById('userName');
 
     // Mettre à jour les éléments avec les informations de l'utilisateur
-    if (profileImage && userName) {  // Vérifie que les éléments existent
+    if (profileImage && userName) { 
         profileImage.src = currentUser.profileImage;
         userName.textContent = `${currentUser.firstName} ${currentUser.lastName}`;
     }
