@@ -2,7 +2,7 @@
 import { createCommentSection } from './DisplayComs.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Load the feed JSON
+    // Charger le JSON du flux
     fetch('../data/json/feed.json')
         .then(response => response.json())
         .then(data => {
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedContainer.appendChild(postElement);
             });
         })
-        .catch(error => console.error('Erreur lors du chargement du feed :', error));
+        .catch(error => console.error('Erreur lors du chargement du flux :', error));
 });
 
-// Function to create a post element
+// Fonction pour créer un élément de post
 function createPostElement(post) {
     const postElement = document.createElement('article');
     postElement.classList.add('post');
@@ -23,7 +23,6 @@ function createPostElement(post) {
     const postUserInfo = document.createElement('div');
     postUserInfo.classList.add('post__userinfo');
     
-
     const postUserImage = document.createElement('img');
     postUserImage.classList.add('user-image');
     postUserInfo.appendChild(postUserImage);
@@ -40,7 +39,7 @@ function createPostElement(post) {
     postElement.appendChild(postContent);
     postContent.appendChild(postUserInfo);
     
-    
+    // Ajouter l'image du post si elle existe
     if (post.image) {
         const postImageContainer = document.createElement('div');
         postImageContainer.classList.add('post__imagecontainer');
@@ -52,19 +51,15 @@ function createPostElement(post) {
         postImageContainer.appendChild(postImage);
     }
 
+    // Ajouter le texte du post
     const postText = document.createElement('p');
     postText.classList.add('post__text');
     postText.textContent = post.content;
     postContent.appendChild(postText);
-    
 
-    
-    
-
-    // Add the comments section to the post
+    // Ajouter la section des commentaires au post
     const postComments = createCommentSection(post);
     postElement.appendChild(postComments);
     
-
     return postElement;
 }

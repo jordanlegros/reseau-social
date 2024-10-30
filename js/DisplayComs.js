@@ -8,12 +8,16 @@ export function createCommentSection(post) {
 
     const postInteractions = document.createElement('div');
     postInteractions.classList.add('post__interactions');
+    
     ["like", "dislike", "love"].forEach(reaction => {
         const button = document.createElement('button');
         button.classList.add('post__reaction-btn', `post__reaction-btn--${reaction}`);
         button.dataset.reaction = reaction;
         button.textContent = reaction === "like" ? "👍 Like" : reaction === "dislike" ? "👎 Dislike" : "❤️ Love";
         postInteractions.appendChild(button);
+
+        // Ajouter un événement de clic pour émettre des particules
+        button.addEventListener('click', () => emitParticles(button, reaction));
     });
 
     postComments.appendChild(postInteractions);
@@ -164,4 +168,24 @@ async function addReply(post, comment, replyContent, replyInput, commentItem) {
 async function sendCommentToServer(postId, comment) {
     // Logique de l'appel au serveur (placeholder)
     console.log(`Comment sent to server: Post ID: ${postId}, Comment:`, comment);
+}
+
+// Fonction pour émettre des particules au-dessus du bouton
+function emitParticles(button, reaction) {
+    const particle = document.createElement('span');
+    particle.classList.add('particle', `particle--${reaction}`);
+    particle.textContent = reaction === "like" ? "👍" : reaction === "dislike" ? "👎" : "❤️";
+
+    // Positionner la particule au-dessus du bouton
+    const rect = button.getBoundingClientRect();
+    particle.style.left = `${rect.left + rect.width / 2}px`;
+    particle.style.top = `${rect.top - 10}px`;
+    particle.style.position = 'fixed'; // Positionnement fixe pour que la particule se déplace visuellement au-dessus du bouton
+
+    document.body.appendChild(particle);
+
+    // Supprimer la particule après l'animation
+    particle.addEventListener('animationend', () => {
+        particle.remove();
+    });
 }
